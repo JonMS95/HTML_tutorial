@@ -1,0 +1,118 @@
+<!--
+  Hint: in VSCode, if using a proper HTML extension, pressing tab key after typing '!' will show up an
+  HTML boilerplate.
+-->
+
+<!-- First line tells the browser which type of file is this one. -->
+<!DOCTYPE html>
+
+<!--
+  Then we have to define the html object, by using the opening and closing tags.
+  A commonly used attribute is "lang", which stands for the used human language.
+-->
+<html lang="en">
+  <!-- Use the head element to provide the browser with relevant information about the webpage. -->
+  <head>
+    <!--
+      meta elements are not elements meant to be displayed on the webpage,
+      but for the viewer to have plenty of information for displaying them well.
+    -->
+    <!-- charset defines the set of character to be used, such as ASCII, UTF-8 ... and so on. -->
+    <meta charset="UTF-8" />
+    <!-- viewport defines basic settings for the webpage to be properly displayed on any device. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- keywords are just relevant to add some information tags for the browser. -->
+    <meta name="keywords" content="HTML, CSS" />
+    <!-- description shows a brief description of the site, which is shown on the browser just below the link to the page. -->
+    <meta name="description" content="An HTML tutorial." />
+    <!-- Use title to give some title to the file. It will be displayed as the tab's name. -->
+    <title>My first webpage!</title>
+    <!--
+      style elements are CSS object that provide some style to our webpage. In this case, CSS code is embedded in
+      the HTML file. However, it could be out of it as well, as a separated file.
+    -->
+    <style>
+      /* The rule below will apply to any image object within our html document. */
+      img {
+        width: 150px;
+        border-radius: 75px;
+        float: left;
+        margin-right: 10px;
+      }
+
+      /*
+      The following rule will only apply to the paragraph (p) element which class is tagged as "username".
+      If there wasn't any "type." sentence, it would apply to any object containing the specified tag.
+      */
+      p.greeting {
+        font-weight: bold;
+      }
+
+      /* If emphasis is wanted, a property for it can be defined, so it has the same effect for every case in which the "em" tag is used. */
+      em {
+        color: red;
+        font-style: italic;
+        font-weight: bolder;
+      }
+      p.postdata {
+        font-size: small;
+      }
+      em.postdata {
+        color: blue;
+        font-style: normal;
+        font-weight: bold;
+      }
+
+      img.github_link {
+        width: 40px;
+        border-radius: 75px;
+        float: left;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <!-- Within the body element, other elements that are going to compose the web are included. -->
+  <body>
+    <!-- h1 stands for header 1. -->
+    <h1>Hello everyone!</h1>
+    <!--
+      img is short for image.
+      Notice that images cannot have any child object, so it should be a self closing tag. Different from XML, closing tags needn't a trailing slash in HTML
+      src stands for the element that's meant to be displayed, while alt stands for alternative information.
+    -->
+    <img
+      src="images/F1image.jpg"
+      alt="An image of a formula 1 laying on the beach."
+    />
+    <!-- p is short for paragraph -->
+    <!--
+      entities can be used to add interpolate characters that should not be parsed as object (for instance, < and > symbols). To do so, &symbol;
+      syntax must be used
+    -->
+    <p class="greeting">My name is Jon Martinez,</p>
+    <!--
+      Words within p elements can be wrapped by em elements in order to emphasize. Although it modifies text style to italic by default, it should be defined
+      as above (note "em" element properties). Although some other style formatters exist, such as "i" (for italics) or "b" for bold, those are no longer
+      used often, since they are considered to be deprecated.
+    -->
+    <p>and I am learning <em>&lt;HTML&gt;</em>.</p>
+    <p class="postdata">
+      (and a bit of <em class="postdata">CSS</em> as well!)
+    </p>
+    <!-- To add hyperlinks to other webpages, use "a" tags (which stands for anchor). The text within the tag can be used as link.-->
+    <a href="company/about.html"> About me </a>
+    <!-- Instead of text, images can be used as links as well. Moreover, links do not have to be necessarily hosted in the same machine as the host webpage.-->
+    <a href="https://github.com/JonMS95?tab=repositories">
+      <img
+        class="github_link"
+        src="images/github_symbol.png"
+        alt="Access to my GitHub public repos."
+      />
+    </a>
+  </body>
+</html>
+
+<!--
+  For the sake of correctness, using a validator for the HTML file (such as https://validator.w3.org/) is strongly recommended.
+  Same goes for CSS, being https://jigsaw.w3.org/css-validator/ a good choice.
+-->
